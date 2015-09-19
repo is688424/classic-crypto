@@ -6,7 +6,7 @@
 # despues ingresar cadena a decifrar y misma de desplazamiento
 
 
-abc = 'abcdefghijklmnopqrstuvwxyz'
+abc = 'abcdefghijklmnopqrstuvwxyz,..?:; !'
 
 def cifrar(cadena, clave):
 
@@ -16,9 +16,9 @@ def cifrar(cadena, clave):
         suma = abc.find(letra) + clave
         modulo = int(suma) % len(abc)
         text_cifrado = text_cifrado + str(abc[modulo])
-        print suma
-        print modulo
-        print text_cifrado
+       # print suma
+       # print modulo
+       # print text_cifrado
 
     return text_cifrado
 
@@ -35,10 +35,10 @@ def decifrar(cadena, clave):
 
 def main():
     c = str(raw_input('cadena a cifrar: ')).lower()
-    n = int(raw_input('clave numerica: '))
+    n = int(raw_input('clave numerica 0-32: '))
     print cifrar(c,n)
     cc = str(raw_input('cadena a decifrar: ')).lower()
-    cn = int(raw_input('clave numerica: '))
+    cn = int(raw_input('clave numerica 0-32: '))
     print decifrar(cc,cn)
 
 if __name__ == '__main__':
